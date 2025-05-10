@@ -4,12 +4,9 @@ const addTask = () => {
 
     let task = document.getElementById('nome-tarefa')
     let error = document.getElementById("error")
-    let msgError = "O campo ''digite sua tarefa'' é obrigatório..."
-
-
-
+  
     if (task.value == "") {
-        error.textContent = msgError
+        error.textContent =  "O campo ''digite sua tarefa'' é obrigatório..."
         return
     } else {
         lista.push(task.value)
@@ -44,7 +41,7 @@ const renderTask = () => {
         botaoEditar.onclick = () => editTask(i)
 
         let botaoLimpar = document.getElementById("clear")
-        botaoLimpar.onclick=()=> cleartasks()
+        botaoLimpar.onclick = () => cleartasks()
 
 
         list.appendChild(li_1)
@@ -59,9 +56,9 @@ const renderTask = () => {
 
 }
 
-const removeTask = (i) => {
+const removeTask = (id) => {
 
-    lista.splice(i, 1)
+    lista.splice(id, 1)
     renderTask()
 }
 
