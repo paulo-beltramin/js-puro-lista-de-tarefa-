@@ -43,6 +43,9 @@ const renderTask = () => {
         botaoEditar.textContent = 'Editar'
         botaoEditar.onclick = () => editTask(i)
 
+        let botaoLimpar = document.getElementById("clear")
+        botaoLimpar.onclick=()=> cleartasks()
+
 
         list.appendChild(li_1)
         li_1.appendChild(botaoEditar)
