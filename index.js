@@ -27,6 +27,7 @@ const renderTask = () => {
 
     for (let i = 0; i < lista.length; i++) {
         let li_1 = document.createElement('li')
+        let div = document.createElement("div")
 
         li_1.textContent = lista[i]
 
@@ -37,20 +38,20 @@ const renderTask = () => {
         botaoRemover.onclick = () => removeTask(i)
 
         let botaoEditar = document.createElement("button")
-        
+
         botaoEditar.classList = "botao-editar"
         botaoEditar.textContent = 'Editar'
-        li_1.appendChild(botaoEditar)
         botaoEditar.onclick = () => editTask(i)
-
-        let botaoLimpar = document.createElement("button")
-        botaoLimpar.classList = "botao-limpar"
-        botaoLimpar.textContent = 'Limpar tarefas'
-        li_1.appendChild(botaoLimpar)
-        botaoLimpar.onclick = () => cleartasks(i)
 
 
         list.appendChild(li_1)
+        li_1.appendChild(botaoEditar)
+
+        li_1.appendChild(div)
+        div.appendChild(botaoEditar)
+        div.appendChild(botaoRemover)
+
+        div.classList = 'container-botao'
     }
 
 }
@@ -62,10 +63,17 @@ const removeTask = (i) => {
 }
 
 const editTask = (id) => {
-    let editando = prompt('edite a tarefa')
+    let error = document.getElementById("error")
 
-    if (editando !== " ") {
+    let editando = prompt('Editando tarefa ... ')
+
+    if (editando === "") {
+        error.textContent = "Não é possivel editar o campo vazio ..."
+
+
+    } else {
         lista[id] = editando
+        error.textContent = ""
         renderTask()
     }
 }

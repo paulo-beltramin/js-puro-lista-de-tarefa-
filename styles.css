@@ -5,7 +5,6 @@
 }
 
 .container {
-    background-color: bisque;
     padding: 100px 0;
     display: flex;
     justify-content: center;
@@ -59,7 +58,7 @@
 
 #list li {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 900px;
     margin-bottom: 16px;
     font-size: 18px;
@@ -80,14 +79,39 @@
 }
 
 .botao-remover {
-
+    font-weight: bold;
     background-color: red;
     color: white;
     padding: 4px 8px;
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    cursor: pointer;
+    margin-left: 16px;
+
+}
+
+.botao-editar {
+    background-color: yellow;
+    font-weight: bold;
+    color: black;
+    padding: 4px 8px;
+    display: flex;
+    cursor: pointer;
+
+}
 
 
+.botao-limpar {
+    background-color: greenyellow;
+    color: black;
+    padding: 4px 8px;
+    display: flex;
+    cursor: pointer;
+
+
+}
+
+.container-botao {
+    display: flex;
+    justify-content: end;
 
 }
