@@ -47,27 +47,47 @@
     cursor: pointer;
 }
 
-.container ul {
+#list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin-top: 40px;
     color: #fff;
-    width: 400px;
     text-align: center;
 }
 
-.container ul li {
+#list li {
+    display: flex;
+    justify-content: space-between;
+    width: 900px;
+    margin-bottom: 16px;
+    font-size: 18px;
+    font-weight: bold;
     background-color: rgba(0, 0, 0, 0.8);
-    padding: 4px 8px;
+    padding: 8px 12px;
     border-radius: 8px;
     list-style: none;
-    margin-bottom: 8px;
 
 }
 
-#error{
+#error {
     color: red;
     font-size: 18px;
     font-weight: bold;
     margin-top: 18px;
     line-height: 32px;
-  
+}
+
+.botao-remover {
+
+    background-color: red;
+    color: white;
+    padding: 4px 8px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+
+
 }
